@@ -3,11 +3,9 @@
 An interactive **sorting algorithm simulator** built with [p5.js](https://p5js.org/).  
 This project visualizes how different sorting algorithms work, step by step, with smooth animations and optional sound effects.
 
----
+### 🌐 Live Demo
 
-## 🌐 Live Demo
-
-👉 [**View Live Project**](https://your-live-link-here.com)
+👉 [**View Live Project**](https://danny-wits.github.io/SortingJs_P5/)
 
 ---
 ## 🚀 Features
@@ -72,6 +70,7 @@ This project visualizes how different sorting algorithms work, step by step, wit
 
 <img width="1915" height="883" alt="image" src="https://github.com/user-attachments/assets/39731efe-ca66-486b-b909-5400ed054015" />
 
+<img width="1914" height="924" alt="image" src="https://github.com/user-attachments/assets/1c97bc1e-6e7e-4c30-b11a-80a6b099e4db" />
 
 
 ## 🤝 Contributing
