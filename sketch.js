@@ -6,7 +6,7 @@ function setup() {
   document.getElementById("delay").addEventListener("change", (e) => {
     var speed = e.target.value;
     select("#speedLabel").html("Speed : " + speed);
-    setAnimationDelay(map(speed, 0, 100, 2000, 1));
+    setAnimationDelay(2000 / speed);
   });
   init();
 }

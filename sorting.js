@@ -1,5 +1,6 @@
 const algorithms = [
   "Bubble Sort",
+  "OPT Bubble Sort",
   "Insertion Sort",
   "Selection Sort",
   "Merge Sort",
@@ -8,6 +9,7 @@ const algorithms = [
 
 const sortingAlgorithms = {
   "Bubble Sort": bubbleSort,
+  "OPT Bubble Sort": optBubbleSort,
   "Insertion Sort": insertionSort,
   "Selection Sort": selectionSort,
   "Merge Sort": mergeSort,
@@ -26,6 +28,21 @@ async function bubbleSort(bars) {
     }
   }
 }
+async function optBubbleSort(bars) {
+  print("OPT bubble sort called");
+
+  for (let i = 0; i < bars.length; i++) {
+    let flag = false;
+    for (let j = 0; j < bars.length - i - 1; j++) {
+      await sleep(ANIMATION_DELAY);
+      if (bars[j].getValue() > bars[j + 1].getValue()) {
+        await swap(bars, j, j + 1);
+        flag = true;
+      }
+    }
+    if (!flag) break;
+  }
+}
 async function insertionSort(bars) {
   print("insertion sort called");
 
@@ -40,6 +57,7 @@ async function insertionSort(bars) {
     bars[j + 1].setValue(temp);
   }
 }
+
 function selectionSort() {}
 function mergeSort() {}
 function quickSort() {}
