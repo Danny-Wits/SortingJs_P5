@@ -3,8 +3,11 @@
 An interactive **sorting algorithm simulator** built with [p5.js](https://p5js.org/).  
 This project visualizes how different sorting algorithms work, step by step, with smooth animations and optional sound effects.
 
----
+### 🌐 Live Demo
 
+👉 [**View Live Project**](https://danny-wits.github.io/SortingJs_P5/)
+
+---
 ## 🚀 Features
 
 - ✅ **Bubble Sort** (implemented)
@@ -21,12 +24,11 @@ This project visualizes how different sorting algorithms work, step by step, wit
 ```
 
 .
-├── libraries/
-│   ├── audio.js       # Sound utilities
-│   ├── bar.js         # Bar (array element) class
-│   ├── beep.wav       # Audio effect
-│   ├── cling.m4a      # Audio effect
-│   ├── cling.mp3      # Audio effect
+│── audio.js       # Sound init and set up
+│── bar.js         # Bar (array element) class
+│── beep.wav       # Audio effect
+│── cling.m4a      # Audio effect
+│── cling.mp3      # Audio effect
 ├── index.html         # Main HTML entry
 ├── jsconfig.json      # Project JS config
 ├── readme.md          # Documentation
@@ -37,20 +39,14 @@ This project visualizes how different sorting algorithms work, step by step, wit
 
 ```
 
----
 
-## 🌐 Live Demo
-
-👉 [**View Live Project**](https://your-live-link-here.com)
-
----
 
 ## 🛠 Installation & Usage
 
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com//sorting-visualizer.git
+   git clone https://github.com/Danny-Wits/SortingJs_P5.git
    cd sorting-visualizer
    ```
 
@@ -72,7 +68,9 @@ This project visualizes how different sorting algorithms work, step by step, wit
 
 ## 📸 Preview
 
-![App Screenshot](./preview.png)
+<img width="1915" height="883" alt="image" src="https://github.com/user-attachments/assets/39731efe-ca66-486b-b909-5400ed054015" />
+
+<img width="1914" height="924" alt="image" src="https://github.com/user-attachments/assets/1c97bc1e-6e7e-4c30-b11a-80a6b099e4db" />
 
 
 ## 🤝 Contributing
