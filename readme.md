@@ -8,11 +8,14 @@ This project visualizes how different sorting algorithms work, step by step, wit
 👉 [**View Live Project**](https://danny-wits.github.io/SortingJs_P5/)
 
 ---
+
 ## 🚀 Features
 
 - ✅ **Bubble Sort** (implemented)
 - ✅ **Insertion Sort** (implemented)
-- 🔜 More algorithms coming soon (Selection Sort, Merge Sort, Quick Sort, Heap Sort, Radix Sort, etc.)
+- ✅ **Selection Sort** (implemented)
+- ✅ **Merge Sort** (implemented)
+- 🔜 More algorithms coming soon ( Quick Sort, Heap Sort, Radix Sort, etc.)
 - 🎵 Audio feedback (toggle on/off)
 - 🎛 Adjustable **array size** and **speed**
 - 🔀 Generate new or shuffled arrays anytime
@@ -38,8 +41,6 @@ This project visualizes how different sorting algorithms work, step by step, wit
 ├── style.css          # UI styling
 
 ```
-
-
 
 ## 🛠 Installation & Usage
 
@@ -71,7 +72,6 @@ This project visualizes how different sorting algorithms work, step by step, wit
 <img width="1915" height="883" alt="image" src="https://github.com/user-attachments/assets/39731efe-ca66-486b-b909-5400ed054015" />
 
 <img width="1914" height="924" alt="image" src="https://github.com/user-attachments/assets/1c97bc1e-6e7e-4c30-b11a-80a6b099e4db" />
-
 
 ## 🤝 Contributing
 

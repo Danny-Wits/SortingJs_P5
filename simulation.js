@@ -3,7 +3,7 @@ let bars = [];
 let ANIMATE = false;
 let ANIMATION_DELAY = 1000;
 let ANIMATE_EVERY_n_FRAME = 100; //100 max
-const BAR_SEPARATION = 5;
+let BAR_SEPARATION = 4;
 let itemsCount = 20;
 
 /**
@@ -60,14 +60,21 @@ function sDraw() {
 
 //!Sorting API
 function sort_list() {
+  if (!select(".menu").hasClass("hide")) toggle_menu();
   getCurrentAlgo()(bars);
 }
 
 //!Functionality
-function new_list() {
+async function new_list() {
   init(select("#size").value());
+  break_flag = true;
+  await sleep(ANIMATION_DELAY * 2.5);
+  break_flag = false;
 }
-function shuffle_list() {
+async function shuffle_list() {
   shuffle(array, true);
   setBars();
+  break_flag = true;
+  await sleep(ANIMATION_DELAY * 2.5);
+  break_flag = false;
 }

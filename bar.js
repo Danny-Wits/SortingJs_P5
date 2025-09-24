@@ -2,12 +2,17 @@ const IDLE = 0;
 const ACCESS = 1;
 const SWAPPING = 2;
 const INSERTION = 3;
+const SELECTION = 4;
+const MERGE = 5;
+
 const HEIGHT_MULTIPLIER = 10;
 const bar_states_colors = {
   0: "black",
-  1: "green",
-  2: "red",
-  3: "blue",
+  1: "#92F294",
+  2: "#FF99A9",
+  3: "#88CEFB",
+  4: "#C0F9FA",
+  5: "#88CEFB",
 };
 
 class Bar {
@@ -43,7 +48,7 @@ class Bar {
     }
     setTimeout(
       () => (this.state = IDLE),
-      ANIMATION_DELAY * (state === INSERTION ? 3 : 1)
+      ANIMATION_DELAY * (state === INSERTION ? 2 : 1)
     );
     return this.value;
   }
@@ -51,5 +56,8 @@ class Bar {
     this.value = value;
     this.h = value * HEIGHT_MULTIPLIER;
     this.y = height - value * HEIGHT_MULTIPLIER;
+  }
+  copy() {
+    return new Bar(this.x, this.w, this.value);
   }
 }

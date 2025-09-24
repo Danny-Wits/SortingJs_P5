@@ -12,26 +12,29 @@
 
   <body>
     <main class="main" id="main"></main>
-    <div class="menu">
-      <div class="controls">
-        <div class="size-box">
-          <p for="size">List Size</p>
-          <input type="number" id="size" value="20" min="1" max="100" />
-        </div>
-        <button onclick="new_list()">New List</button>
-        <button onclick="shuffle_list()">Shuffle</button>
-        <button onclick="toggle_audio()">Toggle Audio</button>
-        <div class="delay-box">
-          <p id="speedLabel">Speed : 20</p>
-          <input type="range" id="delay" min="1" max="100" value="20" />
-        </div>
-      </div>
-      <div class="algos">
-        <select name="algorithm" id="algo"></select>
-        <button onclick="sort_list()">Sort</button>
-      </div>
+    <div class="title hide">
+      <h3>Beauty of Sorting</h3>
+      <p>by DannyWits</p>
     </div>
+    <button class="menu-toggle-button" onclick="toggle_menu()">Menu</button>
+    <div class="menu hide">
+      <p class="size-label">List Size</p>
+      <input type="number" id="size" value="20" min="1" max="100" />
 
+      <button onclick="new_list()">New List</button>
+      <button onclick="shuffle_list()">Shuffle</button>
+      <button onclick="toggle_audio()">Toggle Audio</button>
+      <div class="gap"></div>
+
+      <p id="speedLabel">Speed : 2</p>
+      <input type="range" id="delay" min="1" max="100" value="2" />
+
+      <div class="gap"></div>
+      <p>Select Algorithm</p>
+      <select name="algorithm" id="algo"></select>
+    </div>
+    <button class="stop" onclick="stop_sort()">Stop</button>
+    <button class="sort" onclick="sort_list()">Sort</button>
     <script src="audio.js"></script>
     <script src="bar.js"></script>
     <script src="simulation.js"></script>
