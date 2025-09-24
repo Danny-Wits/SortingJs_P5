@@ -69,9 +69,9 @@ This project visualizes how different sorting algorithms work, step by step, wit
 
 ## 📸 Preview
 
-<img width="1915" height="883" alt="image" src="https://github.com/user-attachments/assets/39731efe-ca66-486b-b909-5400ed054015" />
+<img width="1679" height="928" alt="image" src="https://github.com/user-attachments/assets/a2db3649-4872-442a-9e9c-7c223e2d3018" />
 
-<img width="1914" height="924" alt="image" src="https://github.com/user-attachments/assets/1c97bc1e-6e7e-4c30-b11a-80a6b099e4db" />
+
 
 ## 🤝 Contributing
 
