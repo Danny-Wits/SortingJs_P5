@@ -1,7 +1,7 @@
 let break_flag = false;
 const algorithms = [
-  "Merge Sort",
   "Bubble Sort",
+  "Merge Sort",
   "OPT Bubble Sort",
   "Insertion Sort",
   "Selection Sort",
