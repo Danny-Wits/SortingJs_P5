@@ -1,10 +1,10 @@
 let array = [];
 let bars = [];
 let ANIMATE = false;
-let ANIMATION_DELAY = 1000;
+let ANIMATION_DELAY = 100;
 let ANIMATE_EVERY_n_FRAME = 100; //100 max
-let BAR_SEPARATION = 4;
-let itemsCount = 20;
+let BAR_SEPARATION = 3;
+let itemsCount = 50;
 
 /**
  * Initializes the simulation by generating an array of random numbers
