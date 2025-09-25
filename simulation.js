@@ -1,8 +1,6 @@
 let array = [];
 let bars = [];
-let ANIMATE = false;
 let ANIMATION_DELAY = 200;
-let ANIMATE_EVERY_n_FRAME = 100; //100 max
 let BAR_SEPARATION = 3;
 let itemsCount = 40;
 
