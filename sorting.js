@@ -1,11 +1,11 @@
 let break_flag = false;
 const algorithms = [
-  "Bubble Sort",
   "Merge Sort",
+  "Quick Sort",
+  "Bubble Sort",
   "OPT Bubble Sort",
   "Insertion Sort",
   "Selection Sort",
-  "Quick Sort",
 ];
 
 const sortingAlgorithms = {

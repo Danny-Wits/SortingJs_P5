@@ -15,7 +15,7 @@ This project visualizes how different sorting algorithms work, step by step, wit
 - ✅ **Insertion Sort** (implemented)
 - ✅ **Selection Sort** (implemented)
 - ✅ **Merge Sort** (implemented)
-- 🔜 More algorithms coming soon ( Quick Sort ,etc.)
+- ✅ **Quick Sort** (implemented)
 - 🎵 Audio feedback (toggle on/off)
 - 🎛 Adjustable **array size** and **speed**
 - 🔀 Generate new or shuffled arrays anytime
@@ -70,8 +70,6 @@ This project visualizes how different sorting algorithms work, step by step, wit
 ## 📸 Preview
 
 <img width="1679" height="928" alt="image" src="https://github.com/user-attachments/assets/a2db3649-4872-442a-9e9c-7c223e2d3018" />
-
-
 
 ## 🤝 Contributing
 
