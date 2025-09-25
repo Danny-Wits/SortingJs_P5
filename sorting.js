@@ -1,11 +1,11 @@
 let break_flag = false;
 const algorithms = [
-  "Quick Sort",
-  "Merge Sort",
   "Bubble Sort",
+  "Merge Sort",
   "OPT Bubble Sort",
   "Insertion Sort",
   "Selection Sort",
+  "Quick Sort",
 ];
 
 const sortingAlgorithms = {
@@ -156,7 +156,6 @@ async function partition(bars, start, end) {
       await swap(bars, i, pivotIndex);
       pivotIndex++;
     }
-    
   }
   await swap(bars, pivotIndex, end);
   bars[end].setState(IDLE);
