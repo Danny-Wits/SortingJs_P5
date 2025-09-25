@@ -1,8 +1,7 @@
 let array = [];
 let bars = [];
 let ANIMATE = false;
-let ANIMATION_DELAY = 1000;
-let ANIMATE_EVERY_n_FRAME = 100; //100 max
+let ANIMATION_DELAY = 500;
 let BAR_SEPARATION = 4;
 let itemsCount = 20;
 
@@ -48,12 +47,8 @@ function getBars(array) {
   }
   return bars;
 }
-//Current frame count
-let frameCount = 0;
 
 function sDraw() {
-  if (ANIMATE && frameCount % ANIMATE_EVERY_n_FRAME === 0) {
-  }
   bars.forEach((bar) => bar.draw());
   frameCount++;
 }

@@ -4,6 +4,7 @@ const SWAPPING = 2;
 const INSERTION = 3;
 const SELECTION = 4;
 const MERGE = 5;
+const QUICK = 6;
 
 const HEIGHT_MULTIPLIER = 10;
 const bar_states_colors = {
@@ -13,6 +14,7 @@ const bar_states_colors = {
   3: "#88CEFB",
   4: "#C0F9FA",
   5: "#88CEFB",
+  6: "red",
 };
 
 class Bar {
@@ -41,15 +43,17 @@ class Bar {
   setState(state) {
     this.state = state;
   }
-  getValue(state = ACCESS) {
+  getValue(state = ACCESS, without_Timeout = false) {
     this.state = state;
     if (!beep.isPlaying() && isAudioEnabled) {
       beep.play();
     }
-    setTimeout(
-      () => (this.state = IDLE),
-      ANIMATION_DELAY * (state === INSERTION ? 2 : 1)
-    );
+    if (!without_Timeout) {
+      setTimeout(
+        () => (this.state = IDLE),
+        ANIMATION_DELAY * (state === INSERTION ? 2 : 1)
+      );
+    }
     return this.value;
   }
   setValue(value) {

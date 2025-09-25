@@ -1,11 +1,11 @@
 let break_flag = false;
 const algorithms = [
+  "Quick Sort",
   "Merge Sort",
   "Bubble Sort",
   "OPT Bubble Sort",
   "Insertion Sort",
   "Selection Sort",
-  "Quick Sort",
 ];
 
 const sortingAlgorithms = {
@@ -133,8 +133,35 @@ async function merge(bars, leftBars, rightBars) {
     index++;
   }
 }
-function quickSort() {}
+async function quickSort(bars) {
+  print("quick sort called");
+  quickSortHelper(bars, 0, bars.length - 1);
+}
+async function quickSortHelper(bars, start, end) {
+  if (start < end) {
+    let pivotIndex = await partition(bars, start, end);
 
+    await quickSortHelper(bars, start, pivotIndex - 1);
+    await quickSortHelper(bars, pivotIndex + 1, end);
+  }
+}
+async function partition(bars, start, end) {
+  let pivot = bars[end].getValue(QUICK, true);
+  let pivotIndex = start;
+  for (let i = start; i < end; i++) {
+    if (break_flag) return;
+    await sleep(ANIMATION_DELAY);
+
+    if (bars[i].getValue() < pivot) {
+      await swap(bars, i, pivotIndex);
+      pivotIndex++;
+    }
+    
+  }
+  await swap(bars, pivotIndex, end);
+  bars[end].setState(IDLE);
+  return pivotIndex;
+}
 //Helpers
 async function swap(bars, i, j) {
   if (break_flag) return;
