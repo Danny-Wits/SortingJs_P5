@@ -26,7 +26,13 @@
 
       <button onclick="new_list()">New List</button>
       <button onclick="shuffle_list()">Shuffle</button>
-      <button onclick="toggle_audio()">Toggle Audio</button>
+
+      <div class="checkboxs">
+        <span>Audio</span>
+        <input type="checkbox" onchange="toggle_audio()" />
+        <span>Time Info</span>
+        <input type="checkbox" onchange="toggle_time_info()" />
+      </div>
       <div class="gap"></div>
 
       <p id="speedLabel">Speed : 10</p>
@@ -38,6 +44,7 @@
     </div>
     <button class="stop" onclick="stop_sort()">Stop</button>
     <button class="sort" onclick="sort_list()">Sort</button>
+    <div class="stats" id="time"></div>
     <script src="audio.js"></script>
     <script src="bar.js"></script>
     <script src="simulation.js"></script>

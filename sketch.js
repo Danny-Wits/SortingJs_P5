@@ -49,4 +49,13 @@ async function stop_sort() {
   break_flag = true;
   await sleep(ANIMATION_DELAY * 2.5);
   break_flag = false;
+  timer.stop();
+}
+function toggle_time_info() {
+  isTimeInfoEnabled = !isTimeInfoEnabled;
+  if (isTimeInfoEnabled) timer.show();
+  if (!isTimeInfoEnabled) {
+    timer.stop();
+    timer.hide();
+  }
 }

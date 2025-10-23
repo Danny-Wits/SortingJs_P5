@@ -7,7 +7,6 @@ const algorithms = [
   "Insertion Sort",
   "Selection Sort",
 ];
-
 const sortingAlgorithms = {
   "Bubble Sort": bubbleSort,
   "OPT Bubble Sort": optBubbleSort,
@@ -17,6 +16,33 @@ const sortingAlgorithms = {
   "Quick Sort": quickSort,
 };
 
+const timer = {
+  isActive: false,
+  time: 0,
+  timer: null,
+
+  start: function () {
+    this.isActive = true;
+    this.time = 0;
+    this.timer = setInterval(() => {
+      this.time++;
+      this.display();
+    }, 1);
+  },
+  stop: function () {
+    clearInterval(this.timer);
+    this.isActive = false;
+  },
+  display: function () {
+    select("#time").html(this.time + " ms");
+  },
+  show: function () {
+    select("#time").style("display", "block");
+  },
+  hide: function () {
+    select("#time").style("display", "none");
+  },
+};
 async function bubbleSort(bars) {
   print("bubble sort called");
 
@@ -135,7 +161,7 @@ async function merge(bars, leftBars, rightBars) {
 }
 async function quickSort(bars) {
   print("quick sort called");
-  quickSortHelper(bars, 0, bars.length - 1);
+  await quickSortHelper(bars, 0, bars.length - 1);
 }
 async function quickSortHelper(bars, start, end) {
   if (start < end) {

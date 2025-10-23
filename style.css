@@ -126,6 +126,31 @@ input[type="range"]::-webkit-slider-thumb {
   margin-top: -6px; /* Adjust to center vertically on the track */
 }
 
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+}
+.checkboxs {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  font: 16px "Courier New", Courier, monospace;
+  font-weight: 600;
+}
+.stats {
+  position: fixed;
+  top: 80px;
+  right: 0px;
+  border-radius: 10px 0 0 10px;
+  min-width: 80px;
+  background-color: #c58af8;
+  text-align: right;
+  padding: 5px 10px;
+  z-index: 1000;
+  display: none;
+}
 @media (max-width: 600px) {
   .menu,
   .title {

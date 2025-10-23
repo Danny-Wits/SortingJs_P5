@@ -3,7 +3,7 @@ let bars = [];
 let ANIMATION_DELAY = 200;
 let BAR_SEPARATION = 3;
 let itemsCount = 40;
-
+let isTimeInfoEnabled = false;
 /**
  * Initializes the simulation by generating an array of random numbers
  * and setting up the bars based on this array.
@@ -53,9 +53,11 @@ function sDraw() {
 }
 
 //!Sorting API
-function sort_list() {
+async function sort_list() {
   if (!select(".menu").hasClass("hide")) toggle_menu();
-  getCurrentAlgo()(bars);
+  if (isTimeInfoEnabled) timer.start();
+  await getCurrentAlgo()(bars);
+  timer.stop();
 }
 
 //!Functionality
