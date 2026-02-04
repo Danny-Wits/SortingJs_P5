@@ -1,5 +1,6 @@
 let break_flag = false;
 const algorithms = [
+  "Shell Sort",
   "Merge Sort",
   "Quick Sort",
   "Bubble Sort",
@@ -14,6 +15,7 @@ const sortingAlgorithms = {
   "Selection Sort": selectionSort,
   "Merge Sort": mergeSort,
   "Quick Sort": quickSort,
+  "Shell Sort": shellSort,
 };
 
 const timer = {
@@ -56,6 +58,29 @@ async function bubbleSort(bars) {
     }
   }
 }
+async function shellSort(bars) {
+  print("Shell Sort called");
+  let gap = 1;
+  while (gap < bars.length / 3) {
+    gap = 3 * gap + 1;
+  }
+  for (; gap > 0; gap = floor(gap / 3)) {
+    print({gap})
+    await sleep(ANIMATION_DELAY);
+    for (let i = gap; i < bars.length; i++) {
+      let j = i;
+      await sleep(ANIMATION_DELAY);
+      while (
+        j >= gap &&
+        bars[j].getValue(INSERTION) < bars[j - gap].getValue(INSERTION)
+      ) {
+        if (break_flag) return; //preemption
+        await swap(bars, j, j - gap);
+        j -= gap;
+      }
+    }
+  }
+}
 async function optBubbleSort(bars) {
   print("OPT bubble sort called");
 
@@ -78,7 +103,7 @@ async function insertionSort(bars) {
   for (let i = 1; i < bars.length; i++) {
     let temp = bars[i].getValue(INSERTION);
     let j = i - 1;
-    await sleep(ANIMATION_DELAY * 2);
+    await sleep(ANIMATION_DELAY);
     while (j >= 0 && bars[j].getValue() > temp) {
       if (break_flag) return; //preemption
       await swap(bars, j, j + 1);
@@ -125,7 +150,7 @@ async function mergeSort(bars) {
   await merge(
     bars,
     leftBars.map((bar) => bar.copy()),
-    rightBars.map((bar) => bar.copy())
+    rightBars.map((bar) => bar.copy()),
   );
   bars[mid].setState(IDLE);
 }

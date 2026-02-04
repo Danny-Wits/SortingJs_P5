@@ -2,7 +2,7 @@ let array = [];
 let bars = [];
 let ANIMATION_DELAY = 200;
 let BAR_SEPARATION = 3;
-let itemsCount = 40;
+let itemsCount = 50;
 let isTimeInfoEnabled = false;
 /**
  * Initializes the simulation by generating an array of random numbers
