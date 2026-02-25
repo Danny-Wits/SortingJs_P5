@@ -1,10 +1,10 @@
 let break_flag = false;
 const algorithms = [
+  "OPT Bubble Sort",
   "Shell Sort",
   "Merge Sort",
   "Quick Sort",
   "Bubble Sort",
-  "OPT Bubble Sort",
   "Insertion Sort",
   "Selection Sort",
 ];
@@ -65,7 +65,7 @@ async function shellSort(bars) {
     gap = 3 * gap + 1;
   }
   for (; gap > 0; gap = floor(gap / 3)) {
-    print({gap})
+    print({ gap });
     await sleep(ANIMATION_DELAY);
     for (let i = gap; i < bars.length; i++) {
       let j = i;
@@ -215,15 +215,59 @@ async function partition(bars, start, end) {
 //Helpers
 async function swap(bars, i, j) {
   if (break_flag) return;
+
   bars[i].setState(SWAPPING);
   bars[j].setState(SWAPPING);
-  await sleep(ANIMATION_DELAY);
+
+  // Check if we are in Circle Mode to do the fancy animation
+  if (typeof isCircleMode !== "undefined" && isCircleMode) {
+    let startX_i = bars[i].x;
+    let startX_j = bars[j].x;
+    let startY_i = bars[i].y;
+    let startY_j = bars[j].y;
+    let distanceX = startX_j - startX_i;
+
+    let frames = Math.max(1, Math.floor(ANIMATION_DELAY / 8));
+
+    if (ANIMATION_DELAY > 0) {
+      for (let frame = 1; frame <= frames; frame++) {
+        if (break_flag) break;
+
+        let progress = frame / frames;
+
+        // 1. Horizontal sliding
+        bars[i].x = startX_i + distanceX * progress;
+        bars[j].x = startX_j - distanceX * progress;
+
+        // 2. Vertical arcing
+        let arcHeight = Math.max(distanceX / 1.5, 40);
+        let yOffset = Math.sin(progress * Math.PI) * arcHeight * 2;
+
+        bars[i].yOffset = -yOffset;
+        bars[j].yOffset = yOffset;
+        await sleep(16);
+      }
+    }
+
+    // Snap back to precise original positions to avoid pixel drift over time
+    bars[i].x = startX_i;
+    bars[j].x = startX_j;
+    bars[i].y = startY_i;
+    bars[j].y = startY_j;
+  } else {
+    // NORMAL BAR MODE: Just wait for the standard animation delay
+    await sleep(ANIMATION_DELAY);
+  }
+
+  // Perform the actual underlying data swap
   let temp = bars[i].value;
   bars[i].setValue(bars[j].value);
   bars[j].setValue(temp);
+
   if (!cling.isPlaying() && isAudioEnabled) {
     cling.play();
   }
+
   bars[i].setState(IDLE);
   bars[j].setState(IDLE);
 }

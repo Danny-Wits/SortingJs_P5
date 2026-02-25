@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -12,6 +12,12 @@
 
   <body>
     <main class="main" id="main"></main>
+    <div class="top-header">
+      <h1>Beauty of Sorting</h1>
+      <p class="department-credit">
+        Department of Computer Science, University of Jammu
+      </p>
+    </div>
     <div class="title hide">
       <h3>Beauty of Sorting</h3>
       <p>
@@ -22,7 +28,7 @@
     <button class="menu-toggle-button" onclick="toggle_menu()">Menu</button>
     <div class="menu hide">
       <p class="size-label">List Size</p>
-      <input type="number" id="size" value="20" min="1" max="1000" />
+      <input type="number" id="size" value="15" min="1" max="1000" />
 
       <button onclick="new_list()">New List</button>
       <button onclick="shuffle_list()">Shuffle</button>
@@ -32,11 +38,13 @@
         <input type="checkbox" onchange="toggle_audio()" />
         <span>Time Info</span>
         <input type="checkbox" onchange="toggle_time_info()" />
+        <span>Circles</span>
+        <input type="checkbox" onchange="toggle_circle_mode()" checked />
       </div>
       <div class="gap"></div>
 
       <p id="speedLabel">Speed : 10</p>
-      <input type="range" id="delay" min="1" max="100" value="10" />
+      <input type="range" id="delay" min="1" max="100" value="5" />
 
       <div class="gap"></div>
       <p>Select Algorithm</p>
