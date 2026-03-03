@@ -241,8 +241,8 @@ async function swap(bars, i, j) {
 
         // 2. Vertical arcing
         let arcHeight = Math.max(distanceX / 1.5, 40);
-        let yOffset = Math.sin(progress * Math.PI) * arcHeight * 2;
-
+        let yOffset = Math.sin(progress * Math.PI) * arcHeight;
+        yOffset = Math.min(yOffset, height / 4);
         bars[i].yOffset = -yOffset;
         bars[j].yOffset = yOffset;
         await sleep(16);
