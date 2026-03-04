@@ -5,7 +5,7 @@ This project visualizes how different sorting algorithms work, step by step, wit
 
 ### 🌐 Live Demo
 
-👉 [**View Live Project**](https://danny-wits.github.io/SortingJs_P5/)
+👉 [**View Live Project**](https://sort.dannywits.space/)
 
 ---
 
